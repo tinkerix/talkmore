@@ -12,6 +12,14 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+	<script>
+		(function(){
+          var incomingUrl = window.location.href;
+		  if (incomingUrl.indexOf('referrer') != -1) {
+			window.location = 'https://play.google.com/store/apps/details?id=com.tinkerix.talkmore&referrer=utm_source%3Dfacebook_share';
+		  }
+		}());
+	</script>
     <title>TalkMore</title>
   </head>
 
@@ -27,14 +35,14 @@
 
         <section id="main_content">
           <h3 align="center">
-            <a href="https://play.google.com/store/apps/details?id=com.tinkerix.talkmore">
+            <a href="https://play.google.com/store/apps/details?id=com.tinkerix.talkmore&referrer=utm_source%3Dwebsite">
               <img alt="Get it on Google Play"
                    src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" height="80" widht="229"/>
             </a>
           </h3>
 		  <p/>
 
-		  <h4>TalkMore looks at your call, message and mobile data usage to recommend the right set of mobile plans. You can also find the best plans by estimating future usage. This application is for mobile phone users in India.</h4>
+		  <h4>TalkMore looks at your call, message and mobile data usage to recommend the right set of mobile plans. You can find the best plans by estimating future usage. This application is for mobile phone users in India.</h4>
 		  <p/>
 		  <table>
 			<td><img src="images/screenshot_startup.png" height="298" width="180"/></td>
