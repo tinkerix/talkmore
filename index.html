@@ -16,7 +16,9 @@
 		(function(){
           var incomingUrl = window.location.href;
 		  if (incomingUrl.indexOf('referrer') != -1) {
-			window.location = 'https://play.google.com/store/apps/details?id=com.tinkerix.talkmore&referrer=utm_source%3Dfacebook_share';
+			if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
+				window.location = 'sendsms.html'
+ 			}
 		  }
 		}());
 	</script>
