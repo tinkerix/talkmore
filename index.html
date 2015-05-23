@@ -16,10 +16,13 @@
 		(function(){
           var incomingUrl = window.location.href;
 		  if (incomingUrl.indexOf('referrer') != -1) {
-			if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
+			if(( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {
+				window.location= 'http://a.localytics.com/android?id=com.tinkerix.talkmore&'+incomingUrl.substring(incomingUrl.indexOf('referrer'))
+			}
+			else {
 				window.location = 'sendsms.html'
- 			}
-		  }
+			}
+		}
 		}());
 	</script>
     <title>TalkMore</title>
