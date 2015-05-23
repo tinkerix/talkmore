@@ -20,7 +20,7 @@
 				window.location= 'http://a.localytics.com/android?id=com.tinkerix.talkmore&'+incomingUrl.substring(incomingUrl.indexOf('referrer'))
 			}
 			else {
-				window.location = 'sendsms.html'
+				window.location = 'sendsms.html?'+incomingUrl.substring(incomingUrl.indexOf('referrer'))
 			}
 		}
 		}());
