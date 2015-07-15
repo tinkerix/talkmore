@@ -36,7 +36,7 @@
 
 		// do httpRequest to send SMS
 		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.open("POST","http://localhost:8080/v1/growth/sms_install",true);
+		xmlhttp.open("POST","https://api.talkmoreapp.com/v1/growth/sms_install",true);
 		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 		//sendsms.html is only shown when referrer is set
