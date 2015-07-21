@@ -1,0 +1,14 @@
+/* ::Media box is made up of image on left and unknown content on right*/
+/* ------------------------------------------------------------ */
+.media__image-wrapper {
+    float: left;
+    margin-right: 10px;
+}
+
+.media-box, .media__cotent {
+    overflow: hidden;        
+}
+
+.media__image-wrapper img {
+    width: 80px;
+}

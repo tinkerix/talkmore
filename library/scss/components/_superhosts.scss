@@ -1,0 +1,116 @@
+/* ::Superhosts*/
+/* ------------------------------------------------------------ */
+// .superhosts__title {
+// 	&:before {
+// 		content: "";
+// 		background-image: url(../../images/superhosts.fw.png);
+// 		background-repeat: no-repeat;
+// 		background-position: center;
+// 	}
+// }
+.superhosts__titlebox {
+	.superhost__badge {
+		padding-right: 20px;
+	}	
+}
+
+.superhosts__stats {
+	border-top: 1px solid $white;
+	border-bottom: 1px solid $white;
+	padding: 5px 0;
+	margin: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ::Media Queries */
+/* ------------------------------------------------------------ */
+
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+
+}
+
+@include respond-to($c-vp) {
+
+
+
+}
+
+@include respond-to($d-vp) {
+
+
+
+}
+
+@include respond-to($e-vp) {
+
+
+
+}
+
+@include respond-to($f-vp) {
+
+
+}
+
+
+
+
+
+// @include respond-to-max($f-vp) {
+
+// }
+
+// @include respond-to-max($e-vp) {
+
+// }
+
+@include respond-to-max($d-vp) {
+
+._container--superhost {
+	@include superhost--layout-change();
+}
+
+
+
+
+}
+
+// @include respond-to-max($c-vp) {
+
+// }
+
+// @include respond-to-max($b-vp) {
+
+// }
+
+// @include respond-to-max($a-vp) {
+
+// }
+
+
+
+
+
+
+
+
+
+

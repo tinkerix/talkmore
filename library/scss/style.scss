@@ -1,0 +1,779 @@
+@import "base/required";
+@import "base/reset";
+
+@import "settings";
+// @import "layout/grid";
+
+/* ::Individual Bootstrap component CSS */
+/* ------------------------------------------------------------ */
+@import "bootstrap-generator/bootstrap-generator";
+
+@import "base/typography";
+
+@import "helpers/classes";
+@import "components/modules";
+
+/* ::Layout styles */
+/* ------------------------------------------------------------ */
+@import "layout/base";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/bearddesign";
+
+
+
+
+// header.header {}
+
+// ._container._container__mobile-1 {}
+
+// ._container._container__mobile-2.bg-black-2 {}
+
+
+
+
+/* ::Base styles */
+/* ------------------------------------------------------------ */
+*:focus {
+	outline: none;
+}
+::selection {
+  background: $blue; /* WebKit/Blink Browsers */ 
+  color: $white !important;
+  cursor: pointer;
+
+}
+::-moz-selection {
+  background: $blue; /* Gecko Browsers */  
+  color: $white !important;
+  cursor: pointer;
+
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	@include transition(opacity 0.2s linear);
+	opacity: 0;
+}
+
+[placeholder]:focus:-moz-placeholder {
+	@include transition(opacity 0.2s linear);
+	opacity: 0;
+}
+
+[placeholder]:focus::-moz-placeholder {
+	@include transition(opacity 0.2s linear);
+	opacity: 0;
+}
+
+[placeholder]:focus:-ms-input-placeholder {
+	@include transition(opacity 0.2s linear);
+	opacity: 0;
+}
+
+
+
+
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+
+a {
+	color: $white;
+	text-decoration: none;
+	outline: none;
+	@include _transition();
+	p {
+		@include _transition();
+	}
+	@include link-active-styles { 	// Mixin for interactions (hover,focus,active)
+		// text-decoration: none;
+		// outline: none;
+	}
+	&:hover, &:active {
+		color: $blue;
+	}
+	&:focus {
+		color: $white;
+	}
+}
+
+// p {
+// 	// @include _transition();
+// 	a {
+// 		&:hover, &:active {
+// 			color: $orange;
+// 		}
+// 		&:focus {
+// 			color: inherit;
+// 		}
+// 	}
+// }
+
+// Specific CSS
+// TODO: Make it modular
+// .hover-white {
+// 	a {
+// 		// @include link-active-styles {
+// 			&:hover, &:active {
+// 			// color: $black-4;
+// 		}
+// 	}
+// }
+
+img {
+	vertical-align: bottom;
+	height: auto;
+}
+
+// svg {
+// 	width: 100%;
+// }
+
+textarea {
+	height: 150px;
+	resize: none;
+}
+
+.clearfix {
+	&:before, &:after {
+		display: table;
+		content: " ";
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+
+
+
+
+/* ::Modular CSS for all pages */
+/* ------------------------------------------------------------ */
+._container {
+	// @extend .clearfix;
+}
+
+
+
+
+
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ::Page CSS */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+/* ------------------------------------------------------------ */
+
+
+
+
+
+
+
+/* ::Mobile 1 */
+/* ------------------------------------------------------------ */
+._container__mobile-1 {
+	// height: 90%;
+	position: relative;
+	padding: 100px 0 50px;
+}
+.mobile-1--content {
+	position: relative;
+}
+.mobile-1--content ._comp--title-copy {
+	margin-bottom: 3rem
+}
+
+
+
+.backstrech__wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+	video {
+		position: absolute;
+		left: 0;
+		top: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: 100%;
+	}
+	.backstrech__image {
+		height: 100%;
+		width: 100%;
+		background-image: url(../../images/hero-image.jpg);
+		// @include at2x('../../images/hero-image', $w: cover, $h: null);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: left top;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		// background-color: rgba(38,208,205,0.5);
+		// @include filter-gradient(#26d0cd, #1a2980, horizontal);
+		// @include background-image(linear-gradient(left top, rgba(38,208,205,0.5) 0%, rgba(26,41,128,1) 100%));
+
+		background-color: rgba(38,208,205,0.5);
+		background-image: -moz-linear-gradient(-45deg, rgba(38,208,205,0.5) 0%, rgba(26,41,128,1) 100%);
+		background-image: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(38,208,205,0.5)), color-stop(100%, rgba(26,41,128,1)));
+		background-image: -webkit-linear-gradient(-45deg, rgba(38,208,205,0.5) 0%, rgba(26,41,128,1) 100%);
+		background-image: -o-linear-gradient(-45deg, rgba(38,208,205,0.5) 0%, rgba(26,41,128,1) 100%);
+		background-image: -ms-linear-gradient(-45deg, rgba(38,208,205,0.5) 0%, rgba(26,41,128,1) 100%);
+		background-image: linear-gradient(135deg, rgba(38,208,205,0.5) 0%, rgba(26,41,128,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26d0cd', endColorstr='#1a2980', GradientType=1 );
+
+
+
+	}
+}
+
+
+
+
+/* ::Mobile 2 */
+/* ------------------------------------------------------------ */
+._container__mobile-2 {
+	// height: 80%;
+	padding: 50px 0;
+	&--tabs {
+		// height: 20%;
+		.features-tab-list li {
+			margin: 25px 0;
+		}
+	}
+}
+.mobile-2--content .icon-wrapper img {
+	width: 50px;
+	height: 50px;
+}
+.feature-image img {
+	width: 50%;
+	margin-bottom: 15px;
+}
+
+// Bootstrap Tabs
+.features-panel {
+	display: block;
+	text-align: center;
+	margin-bottom: 50px;
+	@include respond-to($d-vp) {
+		display: none;
+		text-align: left;
+		margin-bottom: 0px;
+	}
+	&.active {
+		display: block;
+	}
+}
+
+
+.mobile-2--tabs {
+	display: table;
+}
+.features-tab-list li {
+	width: 33%;
+	float: left;
+	text-align: center;
+	border-right: 1px solid $white;
+	padding: 10px 0;
+	&:last-child {
+		border-right: 0;
+	}
+}
+.features-tab-list {
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+	._comp--image {
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+		// margin-bottom: 10px;
+		img, svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+._comp--image svg * {
+	@include _transition();
+}
+.features-tab-list a:hover ._comp--image svg * {
+	stroke: $blue;
+}
+
+
+
+.features-tab-list li:before {
+	content: "";
+	position: absolute;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 17px solid $black-4;
+	top: 0;
+	@include transform(translate(-50%, 0%));
+	@include _transition();
+}
+
+.features-tab-list li.active {
+	&:before {
+		@include transform(translate(-50%, -100%));
+	}
+	._comp--title {
+		color: $blue;
+	}
+	svg * {
+		stroke: $blue;
+	}
+}
+
+
+
+
+
+
+/* ::Press Band */
+/* ------------------------------------------------------------ */
+.press--band .press-col {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	img {
+		width: 65%;
+		// opacity: 0.7;
+		// @include _transition();
+	}
+}
+// .press-col a:hover {
+// 	img {
+// 		opacity: 1;
+// 	}
+// }
+.press-col a {
+	opacity: 0.7;
+	@include _transition();
+	&:hover {
+		opacity: 1;
+	}
+}
+.press--band {
+	display: table;
+	width: 100%;
+	padding: 25px 0;
+}
+
+
+@include respond-to-max($d-vp) {
+
+	/* ::Press Band*/
+	/* ------------------------------------------------------------ */
+	.press--band {
+		@include horizontal-scrolling($child-element: '.press-col', $width: 30%, $min-width: 150px);
+	}
+
+
+}
+
+
+
+
+/* ::Testimonials */
+/* ------------------------------------------------------------ */
+$testimonee-image-size: 32px;
+$testimonee-size: 3;
+// ._container-testimonial {
+	// padding: rem-font(100px) 0;
+// }
+
+._container-testimonial {
+	padding: rem-font(80px) 0 rem-font(0px);
+}
+.testimonial--col {
+	margin-bottom: rem-font(80px);
+}
+
+.testimonial--inner {
+	text-align: center;
+}
+.testimonial {
+	color: $black-4;
+}
+
+.testimonee {
+	margin: 30px auto 0;
+}
+.testimonee__image {
+	border-radius: 50%;
+	width: $testimonee-image-size;
+	height: $testimonee-image-size;
+	background-image: url(./../../images/testimonees.png);
+	background-repeat: no-repeat;
+	background-size: $testimonee-image-size*$testimonee-size;
+	margin-right: 15px;
+}
+@for $i from 1 to $testimonee-size+1 {
+	.testimonial--col:nth-child(#{$i}) .testimonee__image {
+		background-position: -$testimonee-image-size*($i - 1) top;
+	}
+}
+.testimonee__name {
+	text-transform: uppercase;
+	color: $black-4;
+}
+
+
+
+@include respond-to-max($d-vp) {
+
+	/* ::Press Band*/
+	/* ------------------------------------------------------------ */
+	._container-testimonial .row {
+		// @include horizontal-scrolling($child-element: '.testimonial--col', $width: 42%, $min-width: 300px);
+	}
+
+
+}
+
+
+
+
+
+/* ::Team */
+/* ------------------------------------------------------------ */
+$team-image-size: 70px;
+$team-size: 3;
+
+._container-team {
+	padding: rem-font(80px) 0 rem-font(0px);
+}
+.team--col {
+	margin-bottom: rem-font(80px);
+}
+.team {
+	clear: left;
+}
+.member__image {
+	width: $team-image-size;
+	height: $team-image-size;
+	background-image: url(./../../images/team.png);
+	background-repeat: no-repeat;
+	background-size: $team-image-size*$team-size;
+}
+@for $i from 1 to $team-size+1 {
+	.team--col:nth-child(#{$i}) .member__image {
+		background-position: -$team-image-size*($i - 1) top;
+	}
+}
+
+.member__name,
+.member__description {
+	color: $black-4;
+}
+.member__social a:hover {
+	color: $black-4;
+}
+
+.team-title {
+	margin-bottom: rem-font(80px);
+}
+
+
+@include respond-to-max($d-vp) {
+
+	/* ::Press Band*/
+	/* ------------------------------------------------------------ */
+	.team {
+		// @include horizontal-scrolling($child-element: '.team--col', $width: 42%, $min-width: 300px);
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ::App Screen */
+/* ------------------------------------------------------------ */
+._container-appscreens {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	text-align: right;
+}
+
+
+.appscreens-frame {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	// max-width: 100%;
+	width: auto;
+	@include transform(translateY(16%));
+	html.touch:not(.mousePresent) & {
+		@include _transition();
+	}
+	html.touch & {
+		// max-width: none;
+	}
+	html.mousePresent & {
+		// max-width: 100%;
+	}
+	.no-detect & {
+		// max-width: 100%;
+	}
+
+}
+
+
+
+
+/* ::Show phone based on orientation */
+/* ------------------------------------------------------------ */
+html.touch:not(.mousePresent) {
+	.appscreens-frame {
+		@include transform(translateY(16%) !important);
+		&.scrollDown {
+			@include transform(translateY(105%) !important);
+		}
+	}
+	@media screen and (orientation: portrait) {
+		.appscreens-frame {
+			height: 50%;
+			@include transform(translateY(-50%) !important);
+			&.scrollDown {
+				@include transform(translateY(150%) !important);
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+.appscreens--phone {
+	position: relative;
+	height: 100%;
+}
+.appscreens--phoneFrame {
+	height: 100%;
+	text-align: center;
+	img {
+		width: auto;
+		height: 100%;
+	}
+}
+
+
+
+// 1st & 2nd Phone Layouts
+.appscreens--phone-1st-fold,
+.appscreens--phone-2nd-fold {
+	position: absolute;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.appscreens--phone-1st-fold {
+	width: 86%;
+	left: 7%;
+}
+.ui-screen-wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	@include _transition($timing: ease, $duration: 0.6s);
+}
+.ui-screen {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 50%;
+	top: 62%;
+	text-align: center;
+	@include transform(translate(-50%, -50%));
+}
+.ui-screen img {
+	height: 73%;
+	width: auto;
+}
+
+// 1st Phone Animation
+$slideCount: 5;
+$slideWidth: 100%;
+@for $i from 1 through $slideCount {
+	.ui-slider .ui-slide:nth-child(#{$i}) {
+		// left: $screen-width*($i - 1);
+		@include transform(translate( ($slideWidth*($i - 1)) - 50% , -50%) translateZ(0));
+	}
+	.ui-slider.slide-#{$i}  {
+		@include transform(translateX( -($slideWidth*($i - 1))) translateZ(0));
+	}
+}
+
+
+
+.appscreens--phoneFrame__wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* ::Disable :hover CSS for touch events */
+/* ------------------------------------------------------------ */
+body.touched {
+	.cta--text,
+	.cta--form {
+		display: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ::Media Queries*/
+/* ------------------------------------------------------------ */
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+}
+
+@include respond-to($c-vp) {
+
+
+}
+
+@include respond-to($d-vp) {
+
+	/* ::Mobile 1 */
+	/* ------------------------------------------------------------ */
+	._container__mobile-1 {
+		height: 90%;
+		position: relative;
+		padding: 0;
+	}
+	/* ::Mobile 2 */
+	/* ------------------------------------------------------------ */
+	._container__mobile-2 {
+		height: 80%;
+		padding: 0;
+		&--tabs {
+			height: 20%;
+			.features-tab-list li {
+				margin: 0
+			}
+		}
+	}
+	.mobile-2--content .icon-wrapper img {
+		width: 85px;
+		height: 85px;
+	}
+
+
+
+
+}
+
+@include respond-to($e-vp) {
+
+	/* ::App Screen */
+	/* ------------------------------------------------------------ */
+	// .appscreens-frame {
+	// 	height: 100%;
+	// }
+	/* ::App Screen */
+	/* ------------------------------------------------------------ */
+	.appscreens-frame {
+		// max-width: 100%;
+		// width: auto;
+	}
+
+
+}
+
+@include respond-to($f-vp) {
+
+	/* ::App Screen */
+	/* ------------------------------------------------------------ */
+	.appscreens-frame {
+		// max-width: 100%;
+		// html.touch & {
+		// 	max-width: none;
+		// }
+		// html.mousePresent & {
+		// 	// max-width: 100%;
+		// }
+	}
+
+
+}
+
+
+
+
+
+@include respond-to-max($f-vp) {
+
+}
+
+@include respond-to-max($e-vp) {
+
+
+
+}
+
+@include respond-to-max($d-vp) {
+
+}
+
+@include respond-to-max($c-vp) {
+
+}
+
+@include respond-to-max($b-vp) {
+
+}
+
+@include respond-to-max($a-vp) {
+
+}
+
+

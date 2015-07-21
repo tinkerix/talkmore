@@ -1,0 +1,125 @@
+.si--input-form {
+	margin: 10px 0;
+
+	.si__field-wrapper {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+		&:first-child {
+			margin-bottom: 15px;
+		}
+	}
+	&__block {
+		.si__field-wrapper {
+			display: block;
+			float: none;
+			position: relative;
+			text-align: right;
+			&:first-child {
+				margin-bottom: 0px;
+			}
+			.si__input {
+				width: 100%;
+				margin-bottom: 15px;
+			}
+			.si__submit {
+				// text-align: right;
+			}
+		}
+	}
+}
+
+.si__input {
+	width: 100%;
+}
+.si__submit {
+	margin-left: 10px;
+	white-space: nowrap;
+}
+
+
+
+
+/* ::Media Queries */
+/* ------------------------------------------------------------ */
+
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+
+}
+
+@include respond-to($c-vp) {
+
+	.si--input-form:not(.si--input-form__block) {
+		display: table;
+		width: 360px;
+		.si__field-wrapper {
+			display: table-cell;
+			vertical-align: middle;
+			float: none;
+			
+		}
+	}
+
+
+
+}
+
+@include respond-to($d-vp) {
+
+
+
+}
+
+@include respond-to($e-vp) {
+
+
+
+}
+
+@include respond-to($f-vp) {
+
+
+}
+
+
+
+
+
+// @include respond-to-max($f-vp) {
+
+// }
+
+// @include respond-to-max($e-vp) {
+
+// }
+
+// @include respond-to-max($d-vp) {
+
+// }
+
+// @include respond-to-max($c-vp) {
+
+// }
+
+// @include respond-to-max($b-vp) {
+
+// }
+
+// @include respond-to-max($a-vp) {
+
+// }
+
+
+
+
+
+
+
+
+
+

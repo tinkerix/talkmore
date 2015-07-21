@@ -1,0 +1,189 @@
+// // ------------------------------------------------------------
+// // Footer module (example)
+// // ------------------------------------------------------------
+
+// // Place your BEM/SMACSS style .scss modules in the modules folder
+
+@import "../layout/si--input";
+
+$phone-margin: 75px;
+/* ::Footer */
+/* ------------------------------------------------------------ */
+.footer {
+	// padding-top: $phone-margin;
+}
+.footer__outer {
+	padding: 15px 0;
+}
+
+/* ::Footer Phone */
+/* ------------------------------------------------------------ */
+.footer-phone {
+	margin-top: -$phone-margin;
+	img {
+		width: 100%;
+	}
+}
+
+
+
+/* ::Footer CTA */
+/* ------------------------------------------------------------ */
+.cta--text {
+	padding: 0 15px;
+}
+
+
+
+/* ::Footer Social */
+/* ------------------------------------------------------------ */
+.cta--playstore {
+	img {
+		width: 125px;
+	}
+}
+.footer__social p {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 15px;
+	margin-top: 0;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.footer__social .icon {
+	color: $white;
+	border-radius: 50%;
+	padding: 15px;
+	font-family: 'icomoon';    
+	position: relative;
+	z-index: 1;
+	display: block;
+	line-height: 1;
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		
+		left: 0;
+		top: 0;
+		z-index: -1;
+		border-radius: 50%;
+		@include _transition();
+	}
+	i {
+		@include _transition();
+	}
+}
+.footer__social .icon:before {
+	background-color: $white;
+	opacity: 0;
+	@include transform(scale(0.5));
+}
+.footer__social .icon:after {
+	background-color: $blue;
+	opacity: 1;
+	@include transform(scale(1));
+}
+
+.footer__social a:hover {
+	i {
+		color: $blue;
+	}
+	.icon:before {
+		opacity: 1;
+		@include transform(scale(1));
+	}
+	.icon:after {
+		opacity: 0;
+		@include transform(scale(0.5));
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* ::Media Queries*/
+/* ------------------------------------------------------------ */
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+}
+
+@include respond-to($c-vp) {
+
+
+}
+
+@include respond-to($d-vp) {
+
+}
+
+@include respond-to($e-vp) {
+
+	/* ::Footer */
+	/* ------------------------------------------------------------ */
+
+	/* ::Footer Social */
+	/* ------------------------------------------------------------ */
+	.footer__social p {
+		margin-top: 10px;
+	}
+
+
+}
+
+@include respond-to($f-vp) {
+
+	/* ::Footer */
+	/* ------------------------------------------------------------ */
+	.footer {
+		padding-top: $phone-margin;
+	}
+	.footer__outer {
+		padding: 15px 0 0 0;
+	}
+
+}
+
+
+
+
+
+@include respond-to-max($f-vp) {
+
+}
+
+@include respond-to-max($e-vp) {
+
+}
+
+@include respond-to-max($d-vp) {
+
+}
+
+@include respond-to-max($c-vp) {
+
+}
+
+@include respond-to-max($b-vp) {
+
+}
+
+@include respond-to-max($a-vp) {
+
+
+}
+
+

@@ -1,0 +1,92 @@
+// ------------------------------------------------------------
+// Placeholders
+// ------------------------------------------------------------
+
+// Show / hides
+%is-hidden 				{ display: none; }
+%is-shown-block 		{ display: block; }
+%is-shown-inline 		{ display: inline; display: inline-block; }
+
+// Type and rhythm
+%is-uppercase 			{ text-transform: uppercase; letter-spacing: 1px; }
+%is-lowercase 			{ text-transform: lowercase; }
+%is-titlecase 			{ letter-spacing: -1px; }
+%no-leader 				{ margin-top: 0; }
+%no-trailer 			{ margin-bottom: 0; }
+
+// Clearfixes
+%clearfix 			{ @include clearfix; }
+%pie-clearfix 		{ @include pie-clearfix; }
+
+// Images
+%max-width 			{ max-width: 100%; height: auto; }
+
+
+
+
+
+%section-space__small {
+	margin: spacing($space-s2) 0;
+	@extend %clearfix;
+}
+
+%section-space__medium {
+	margin: spacing($space-m1) 0;
+	@extend %clearfix;
+}
+
+%section-space__big {
+	margin: spacing($space-m2) 0;
+	@extend %clearfix;
+}
+
+%section-space__small--top {
+	margin-top: spacing($space-s2);
+	@extend %clearfix;
+}
+%section-space__medium--top {
+	margin-top: spacing($space-m1);
+	@extend %clearfix;
+}
+%section-space__big--top {
+	margin-top: spacing($space-m2);
+	@extend %clearfix;
+}
+
+%section-space__small--bottom {
+	margin-bottom: spacing($space-s2);
+	@extend %clearfix;
+}
+%section-space__medium--bottom {
+	margin-bottom: spacing($space-m1);
+	@extend %clearfix;
+}
+%section-space__big--bottom {
+	margin-bottom: spacing($space-m2);
+	@extend %clearfix;
+}
+
+
+%pre-line-wrap {
+	white-space: pre-line;
+}
+
+
+// Placeholder to change layout for superhosts and testimonial section
+@mixin superhost--layout-change() {
+	&.hero-unit--container {
+		height: auto;
+	}
+	.bo--gradient {
+		height: 300px;
+	}
+	.hero-unit--content-container {
+		position: relative;
+		top: auto;
+		left: auto;
+		padding-bottom: spacing($space-s1);
+		@include transform(none);
+		
+		background-color: $black-2;
+	}
+}

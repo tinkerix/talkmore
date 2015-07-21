@@ -1,0 +1,20 @@
+/* The humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+	Web Developer: Viraj Soni
+
+	Designer: Aakash Rodrigues
+
+	Creative Director: Abhisek Sarda
+
+/* THANKS */
+	Name: Beard Design
+	Website: www.bearddesign.co
+
+/* SITE */
+	Version: 1.0.0
+	Site Url: http://bearddesign.co
+	Keywords: 
+	Language: English
+	Technology: html, css, js

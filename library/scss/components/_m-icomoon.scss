@@ -1,0 +1,57 @@
+/* ::Setup Icomoon fonts*/
+/* ------------------------------------------------------------ */
+@include declare-font-face('icomoon', '../fonts/icomoon/icomoon');
+
+// [data-icon]:before {
+// 	font-family: 'icomoon';
+// 	content: attr(data-icon);
+// 	speak: none;
+// 	font-weight: normal;
+// 	font-variant: normal;
+// 	text-transform: none;
+// 	line-height: 1;
+// 	-webkit-font-smoothing: antialiased;
+// }
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-chevron-right:before {
+	content: "\e60c";
+}
+.icon-chevron-left:before {
+	content: "\e60d";
+}
+.icon-key:before {
+	content: "\e606";
+}
+.icon-tag:before {
+	content: "\e607";
+}
+.icon-star:before {
+	content: "\e608";
+}
+.icon-facebook:before {
+	content: "\e609";
+}
+.icon-instagram:before {
+	content: "\e60a";
+}
+.icon-twitter:before {
+	content: "\e60b";
+}
+.icon-linkedin:before {
+	content: "\f0e1";
+}

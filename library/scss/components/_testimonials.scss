@@ -1,0 +1,88 @@
+/* ::Testimonial*/
+/* ------------------------------------------------------------ */
+.testimonial-block__testimonee {
+	.testimonee__image {
+		border-radius: 50%;
+		width: 32px;
+		height: 32px;
+		background-image: url(../../images/testimonee.fw.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-right: 15px;
+	}
+}
+
+
+
+
+
+/* ::Media Queries */
+/* ------------------------------------------------------------ */
+
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+
+}
+
+@include respond-to($c-vp) {
+
+
+
+}
+
+@include respond-to($d-vp) {
+
+
+
+}
+
+@include respond-to($e-vp) {
+
+
+
+}
+
+@include respond-to($f-vp) {
+
+
+}
+
+
+
+
+
+// @include respond-to-max($f-vp) {
+
+// }
+
+// @include respond-to-max($e-vp) {
+
+// }
+
+@include respond-to-max($d-vp) {
+
+._container--testimonial {
+	@include superhost--layout-change();
+}
+
+
+
+
+}
+
+// @include respond-to-max($c-vp) {
+
+// }
+
+// @include respond-to-max($b-vp) {
+
+// }
+
+// @include respond-to-max($a-vp) {
+
+// }

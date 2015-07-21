@@ -1,0 +1,123 @@
+/* ::Button - Type 1*/
+/* ------------------------------------------------------------ */
+
+
+
+%BTN-PROPERTIES {
+	display: inline-block;
+	font-size: inherit;
+	font-family: $roboto;
+	padding: 14.5px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	border: 1px solid $white;
+	border-radius: $br-default;
+	opacity: 1;
+	line-height: 1;
+	outline: none;
+	@include hacks();
+	@include _transition();
+	// &:after {
+	// 	content: "\e60c";
+	// 	font-family: 'icomoon';
+	// 	speak: none;
+	// 	font-style: normal;
+	// 	font-weight: normal;
+	// 	font-variant: normal;
+	// 	text-transform: none;
+	// 	line-height: 1;
+	// 	color: inherit;
+	// 	/* Better Font Rendering =========== */
+	// 	-webkit-font-smoothing: antialiased;
+	// 	-moz-osx-font-smoothing: grayscale;
+		
+	// 	font-weight: 600;
+	// 	display: inline-block;
+	// 	vertical-align: middle;
+	// 	position: relative;
+	// 	margin-left: 10px;
+	// 		// $_prop: color, transform;
+	// 		// $_duration: 0s, $_duration;
+	// 		// $_timing: $_timing, $_timing;
+	// 		// $_delay: $_delay, $_delay;
+	// 	@include transition(all $_duration $_timing $_delay);
+	// 	@include transform(translateX(0) translateZ(0));
+	// }
+	&:hover, &:active {
+		// background: blue;
+		// @include animation(1s pulse linear infinite);
+		// &:after {
+		// 	@include transform(translateX(5px) translateZ(0));
+		// }
+	}
+	&:focus {
+		&:after {
+			color: inherit;
+		}
+	}
+}
+
+// %btn-primary {
+// 	@extend %BTN-PROPERTIES;
+// 	background-color: $orange;
+// 	color: $white;
+// 	&:hover, &:active {
+// 		background-color: $orange-dark;
+// 		border-color: $orange-dark;
+// 		color: $white;
+// 		// @include animation(1s pulse linear infinite 0.5s);
+// 	}
+// 	&:focus {
+// 		background-color: $orange;
+// 	}
+// }
+
+%btn-primary {
+	@extend %BTN-PROPERTIES;
+	background-color: $white;
+	color: $blue;
+	&:after {
+		color: $blue;
+	}
+	&:hover, &:active {
+		background-color: $blue;
+		border-color: $blue;
+		color: $white;
+		// @include animation(1s pulse linear infinite 0.5s);
+		&:after {
+			color: $white;
+		}
+	}
+	&:focus {
+		background-color: transparent;
+		color: $blue;
+		&:after {
+			color: $blue;
+		}
+	}
+}
+
+// %btn-tertiary {
+// 	@extend %BTN-PROPERTIES;
+// 	background-color: transparent;
+// 	color: $orange;
+// 	border: 0;
+// 	// padding: 0;
+// 	&:hover, &:active {
+// 		color: $orange-dark;
+// 	}
+// 	&:focus {
+// 		color: $orange;
+// 	}
+// }
+
+
+.btn-primary {
+	@extend %btn-primary;
+}
+// .btn-secondary {
+// 	@extend %btn-secondary;
+// }
+// .btn-tertiary {
+// 	@extend %btn-tertiary;
+// }

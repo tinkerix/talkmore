@@ -1,0 +1,95 @@
+
+
+// ------------------------------------------------------------
+// :: Define your main colour palette using whatever naming system you like
+// ------------------------------------------------------------
+
+$white: #ffffff;
+// $cream: #F9F6E7; 
+
+// $orange: #FF8000;
+// $orange-dark: #FFAA00;
+$blue: #00A3DB;
+$red: #ef4949;
+$green: #3DE73D;
+
+$grey-medium: #EEEEEE;
+
+$black-2: #222222;
+$black-4: #444444;
+
+$black-8: #888888;
+$black: #000000;
+
+
+
+// ------------------------------------------------------------
+// :: Typesizes/scale
+// ------------------------------------------------------------
+
+// Greek alphabet naming system. Obscure, yet hierarchical.
+// Allows us to avoid naming based on html object. 
+// Eg. A h1 can be smaller visually, than a h4.
+
+$baseFontSize: 16px;
+
+$alpha   	: 50px; //h1
+$beta		: 48px; //h2
+$gamma		: 36px; //h3
+$delta		: 24px; //h4
+$epsilon	: 18px; //h5 
+$zeta		: 16px; // | p large || DO NOT USE THIS FONT SIZE. IF THERE IS ANY <P> WITH THIS FONT SIZE CHANGE IT TO 14PX
+$eta		: 14px; // p && h6
+$theta		: 12px; // p small 
+$iota 		: 10px; // top bottom margin for all typography
+
+
+
+// $g-bold: Gotham SSm Bold A, Gotham SSm Bold B;
+// $g-light: Gotham SSm Light A, Gotham SSm Light B;
+// $ar-bold: Archer SSm Bold A, Archer SSm Bold B;
+// $ar-light: Archer SSm Light A, Archer SSm Light B;
+// $ar-light-i: Archer SSm Lt Italics A, Archer SSm Lt Italics B;
+// $ar-medium: Archer Medium;
+
+
+
+
+// ------------------------------------------------------------
+// :: Breakpoints
+// ------------------------------------------------------------
+
+// a-z viewports. Place where design should change, not always on device widths
+// Hat-tip to @hereinthehive for getting us thinking about naming suggestions
+
+$a-vp								: 320px;	// first viewport 
+$b-vp								: 481px;	// up one
+$c-vp								: 600px;	// up two
+$d-vp								: 768px;	// up three
+$e-vp								: 992px;	// up four
+$f-vp								: 1200px;	// up five
+$ie-fixed-vp						: 980px;    // Viewport for IE fixed width
+
+$max-vp 							: $f-vp; 	// max viewport. Syntactically makes for a nicer option
+
+// ------------------------------------------------------------
+
+
+// ------------------------------------------------------------
+// :: General variables
+// ------------------------------------------------------------
+$br-default: 7px !default;
+
+
+// ------------------------------------------------------------
+// :: Spacing Variables
+// ------------------------------------------------------------
+$space-null: 0;
+$space-s1: 30;
+$space-s2: 45;
+$space-s3: 60;
+$space-m1: 90;
+$space-m2: 125;
+$space-l1: 150;
+$space-l2: 175;
+

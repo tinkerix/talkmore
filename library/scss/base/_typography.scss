@@ -1,0 +1,317 @@
+// ------------------------------------------------------------
+// Global typography
+// ------------------------------------------------------------
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700|Roboto:100,300,400);
+
+
+
+// ------------------------------------------------------------
+// Fonts
+// ------------------------------------------------------------
+
+$roboto: Roboto;
+$roboto-condensed: Roboto Condensed;
+
+
+
+
+
+@mixin font($font-name: Roboto, $size: 18px, $lh: null, $margin: 10px, $style: inherit) {
+	font-family: $font-name;
+	@if $size == inherit { font-size: $size; }
+	@else { font-size: rem-font($size); }
+	@if ($lh) {
+		line-height: $lh;
+	} @else {
+		line-height: 135%;
+	}
+	margin: $margin 0;
+	font-style: $style;
+}
+
+
+
+%r_100 {
+	// @include font($font-name: Roboto);
+	// font-family: Roboto;
+	font-weight: 100;
+}
+%r_300 {
+	// @include font($font-name: Roboto);
+	// font-family: Roboto;
+	font-weight: 300;
+}
+%r_400 {
+	// @include font($font-name: Roboto);
+	// font-family: Roboto;
+	font-weight: 400;
+}
+
+%rc_300 {
+	// @include font($font-name: Roboto Condensed);
+	// font-family: Roboto Condensed;
+	font-weight: 300;
+}
+%rc_400 {
+	// @include font($font-name: Roboto Condensed);
+	// font-family: Roboto Condensed;
+	font-weight: 400;
+}
+%rc_700 {
+	// @include font($font-name: Roboto Condensed);
+	// font-family: Roboto Condensed;
+	font-weight: 700;
+}
+
+
+
+// .g-bold { @include font($g-bold); }
+
+
+
+
+
+/* ::Print */
+/* ------------------------------------------------------------ */
+@media print {
+	body {
+		@include adjust-leading-to(2);
+		font-size: percentage(10 / 16);
+	}
+}
+
+
+html {
+	font-size: percentage(10 / 16);
+	@include respond-to-max($d-vp) {
+		-webkit-text-size-adjust: 100%;	// Stops text scaling in iOS.
+	}
+}
+
+body {
+	@include font(Roboto);
+}
+
+/* ::Core typography */
+/* ------------------------------------------------------------ */
+p, cite, ol, ul, pre, label, input, textarea {
+	@include font(Roboto, $epsilon);
+	// @include respond-to-max($e-vp) {
+	// 	font-size: 18px;
+	// }
+}
+ul 													{ @include nobullet; }
+ol 													{ @include nobullet; }
+li 													{ line-height: inherit; }
+strong, b 											{ font-weight: 700; }
+em, i, q 											{ font-style: italic; }
+span												{ @include font($font-name: inherit, $size: inherit, $lh: inherit, $margin: 0); }
+
+
+
+// ------------------------------------------------------------
+// @mixin responsive-font-change - BETA VERSION
+// ------------------------------------------------------------
+@mixin responsive-font-change($h1: null, $h2: null, $h3: null, $h4: null, $h5: null, $h6: null) {
+
+    @if ($h1) {
+		h1, .h1 {
+			font-size: $h1;
+		}
+    }
+    @if ($h2) {
+		h2, .h2, .h2-varient-2 {
+			font-size: $h2;
+		}
+    }
+    @if ($h3) {
+		h3, .h3, .h3-varient-2 {
+			font-size: $h3;
+		}
+    }
+    @if ($h4) {
+		h4, .h4, .h4-varient-2 {
+			font-size: $h4;
+		}
+    }
+    @if ($h5) {
+		h5, .h5, .h5-varient-2 {
+			font-size: $h5;
+		}
+    }
+    @if ($h6) {
+		h6, .h6 {
+			font-size: $h6;
+		}
+    }
+
+}
+// ------------------------------------------------------------
+// @mixin responsive-font-change - BETA VERSION
+// ------------------------------------------------------------
+
+h1, .h1 {
+	@include font(Roboto Condensed, $alpha, 110%);
+	@extend %rc_700;
+}
+// h2, .h2 {
+// 	@include font($ar-light, $beta);
+// }
+
+h3, .h3 {
+	@include font(Roboto Condensed, $gamma, 110%);
+}
+
+h4, .h4 {
+	@include font(Roboto, $delta, 120%);
+}
+.h4-varient-2 {
+	@include font(Roboto Condensed, $delta, 120%);
+	// @extend %rc_700;
+}
+
+// h5, .h5 {
+// 	@include font($g-light, $epsilon, 120%);
+// }
+
+
+// h6, .h6 {
+// 	@include font(Roboto, $epsilon, 140%);
+// }
+
+p {
+	// margin: $iota 0;
+	color: $white;
+	@extend %r_100;
+}
+a {
+	@include font(Roboto Condensed);
+	@extend %r_300;
+}
+
+.txt {
+	&-small {
+		font-size: $theta;
+		@extend %rc_700;
+	}
+	&-medium {
+		font-size: rem-font($eta);
+		@extend %r_400;
+	}
+	&-large {
+		// font-size: rem-font($epsilon);
+	}
+}
+
+
+
+// ------------------------------------------------------------
+// Colors
+// ------------------------------------------------------------
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+	color: $white;
+}
+h5, .h5, h6, .h6 {
+	color: $black-4;
+}
+
+
+
+/* ::Media Queries for Typography*/
+/* ------------------------------------------------------------ */
+html {
+	font-size: 42.5%;
+}
+
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+	html {
+		font-size: 50.5%;
+	}
+
+}
+
+@include respond-to($c-vp) {
+
+	html {
+		font-size: 55.5%;
+	}
+
+}
+
+@include respond-to($d-vp) {
+
+	html {
+		font-size: 52.5%;
+	}
+
+}
+
+@include respond-to($e-vp) {
+
+	html {
+		font-size: 62.5%;
+	}
+
+}
+
+@include respond-to($f-vp) {
+
+}
+
+
+
+
+
+
+
+@include respond-to-max($f-vp) {
+
+}
+
+@include respond-to-max($e-vp) {
+
+}
+
+@include respond-to-max($d-vp) {
+
+}
+
+@include respond-to-max($c-vp) {
+
+	// @include responsive-font-change($h1: rem-font($alpha) - 1);
+
+}
+
+@include respond-to-max($b-vp) {
+
+
+}
+
+@include respond-to-max($a-vp) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

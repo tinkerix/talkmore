@@ -1,0 +1,286 @@
+// ------------------------------------------------------------
+// Navigation module (example)
+// ------------------------------------------------------------
+
+// Place your BEM/SMACSS style .scss modules in the modules folder
+$hamburgerZ-INDEX: 100;
+
+
+ 
+
+/* ::Navigation */
+/* ------------------------------------------------------------ */
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	@include _transition($prop: background-color);
+	.hamburger-active & {
+		background-color: $black-4;
+	}
+}
+.logo {
+	position: relative;
+	z-index: $hamburgerZ-INDEX + 1;
+}
+
+.nav-col {
+	position: inherit;
+}
+.nav-band {
+	display: table;
+	width: 100%;
+	padding: 10px 0;
+	position: relative;
+	.nav {
+		display: table-cell;
+		vertical-align: middle;
+		.nav-link {
+			// display: inline-block;
+		}
+		&.nav-right {
+			text-align: right;
+			min-width: 30px;
+		}
+		&.nav-left {
+			text-align: left;
+		}
+	}
+}
+
+.nav-link {
+	// margin-right: 50px;
+	display: inline-block;
+	p {
+		text-transform: uppercase;
+		font-size: $eta;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+	&:not(.drop-down-parent) {
+		padding-left: 30px;
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+	&.sign-in {
+		width: 100%;
+		border-top: 0;
+	}
+}
+
+
+
+
+
+/* ::Hamburger menu navigation */
+/* ------------------------------------------------------------ */
+// (Animation is website specific so it does not go into the module of hamburger, though hamburger lines' animation can be in hamburger module)
+.hamburger-active {
+	// @include transform(translateY(100%));
+}
+
+.hamburger-active .header {
+	// top: -100%;
+	// width: 100%;
+	// margin-bottom: -30px;
+}
+.header {
+	// @include _transition($prop: top, $timing: linear);
+}
+
+body {
+	// @include _transition($timing: linear);
+}
+.nav-links-container {
+	// top: 30px;
+	@include transform(translateY(-100%));
+	@include _transition();
+	.hamburger-active & {
+		@include transform(translateY(0%));
+	}
+}
+
+
+
+
+
+
+
+
+/* ::Hamburger */
+/* ------------------------------------------------------------ */
+.hamburger-active {
+	overflow: hidden;
+	position: relative;
+
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+}
+.hamburger .bar {
+	width: 30px;
+	height: 3px;
+	background: $white;
+	@include _transition();
+	&:nth-child(2) {
+		margin: 5px 0;
+	}
+}
+.hamburger {
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	@include transform(translateY(-50%) translateZ(0) scale(1));
+	z-index: $hamburgerZ-INDEX;
+	padding: 10px 0px 10px 10px;
+}
+
+.nav-links-container {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	padding-bottom: 30px;
+	margin-top: 61px;
+	z-index: $hamburgerZ-INDEX - 1;
+	visibility: hidden;
+	text-align: center;
+	background: $black-4;
+}
+
+
+
+.hamburger-active {
+
+	.hamburger .bar {
+		&:nth-child(1) {
+			@include transform(translateY(8px) rotate(-45deg));
+		}
+		&:nth-child(2) {
+			opacity: 0;
+		}
+		&:nth-child(3) {
+			@include transform(translateY(-8px) rotate(45deg));
+		}
+	}
+
+	.nav-links-container {
+		visibility: visible;
+		// background: $black-2;
+		// text-align: center;
+		overflow-y: auto;
+	}
+}
+
+// Media Queries only for hamburger
+@include respond-to($d-vp) {
+	
+	.hamburger {
+		display: none;
+	}
+	.nav-links-container {
+		position: inherit;
+		text-align: inherit;
+		visibility: visible;
+		background: transparent;
+	}
+
+	// QUERY FOR NAV ANIMATION
+	.nav-links-container {
+		@include transform(none);
+		@include _transition($prop: none);
+	}
+
+
+	// SITE SPECIFIC CSS
+	.nav-links-container {
+		padding-bottom: 0;
+		margin-top: 0;
+		.hamburger-active & {
+			background: transparent;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+@include respond-to-max($c-vp) {
+
+
+}
+
+
+
+/* ::Media Queries */
+/* ------------------------------------------------------------ */
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+}
+
+@include respond-to($c-vp) {
+
+
+
+}
+
+@include respond-to($d-vp) {
+
+
+
+}
+
+@include respond-to($e-vp) {
+
+
+}
+
+@include respond-to($f-vp) {
+
+}
+
+
+
+
+
+@include respond-to-max($f-vp) {
+
+}
+
+@include respond-to-max($e-vp) {
+
+}
+
+@include respond-to-max($d-vp) {
+
+}
+
+@include respond-to-max($c-vp) {
+
+}
+
+@include respond-to-max($b-vp) {
+
+}
+
+@include respond-to-max($a-vp) {
+
+}
+
+

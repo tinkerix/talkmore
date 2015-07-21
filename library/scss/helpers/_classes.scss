@@ -1,0 +1,93 @@
+// Convert Variables into html classes to be used in html if needed
+$colors: (
+	"white" : $white,
+	// "cream" : $cream,
+	// "orange" : $orange,
+	"blue" : $blue,
+	// "red" : $red,
+	"grey-medium" : $grey-medium,
+	"black-2" : $black-2,
+	"black-4" : $black-4,
+	"black-8" : $black-8,
+	"black" : $black
+);
+@each $color in $colors {
+	$color-class: "#{nth($color, 1)}";
+	.txt-#{$color-class} {
+		color: (nth($color, 2));
+	}
+	.bg-#{$color-class} {
+		background-color: (nth($color, 2));
+	}
+}
+
+
+
+
+// /* ::Pre-defined margin*/
+// /* ------------------------------------------------------------ */
+// $values: 30, 45, 60, 90, 125, 150, 175;
+// @for $i from 1 through length($values) {
+// 	$value: (nth($values, $i));
+
+// 	.margin-bt-#{$value} {
+// 		margin-top: spacing($value, rem);
+// 		margin-bottom: spacing($value, rem);
+// 	}
+// 	.margin-t-#{$value} {
+// 		margin-top: spacing($value, rem);
+// 	}
+// 	.margin-b-#{$value} {
+// 		margin-bottom: spacing($value, rem);
+// 	}
+
+// 	.padding-bt-#{$value} {
+// 		padding-top: spacing($value, rem);
+// 		padding-bottom: spacing($value, rem);
+// 	}
+// 	.padding-t-#{$value} {
+// 		padding-top: spacing($value, rem);
+// 	}
+// 	.padding-b-#{$value} {
+// 		padding-bottom: spacing($value, rem);
+// 	}
+// }
+
+
+
+// /* ::Site Specific classes*/
+// /* ------------------------------------------------------------ */
+// .email {
+// 	color: $orange;
+// 	// font-weight: bold;
+// }
+
+
+
+// .section-space__small {
+// 	@extend %section-space__small;
+// }
+// .section-space__medium {
+// 	@extend %section-space__medium;
+// }
+// .section-space__big {
+// 	@extend %section-space__big;
+// }
+// .section-space__small--top {
+// 	@extend %section-space__small--top;
+// }
+// .section-space__medium--top {
+// 	@extend %section-space__medium--top;
+// }
+// .section-space__big--top {
+// 	@extend %section-space__big--top;
+// }
+// .section-space__small--bottom {
+// 	@extend %section-space__small--bottom;
+// }
+// .section-space__medium--bottom {
+// 	@extend %section-space__medium--bottom;
+// }
+// .section-space__big--bottom {
+// 	@extend %section-space__big--bottom;
+// }

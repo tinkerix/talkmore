@@ -1,0 +1,89 @@
+%gradient-2 {
+	// background-color: rgba-value($black-2,0);
+	@include filter-gradient($black-2, $black-2, vertical);
+	@include background-image(linear-gradient(to bottom, rgba-value($black-2,0) 0%, rgba-value($black-2,0.65) 40%, rgba-value($black-2,1) 85%, rgba-value($black-2,1) 100%));
+}
+
+._container._container--gradient-2 .bo--gradient .bo__overlay {
+	@extend %gradient-2;
+}
+
+
+
+/* ::Media Queries */
+/* ------------------------------------------------------------ */
+
+@include respond-to($a-vp) {
+
+}
+
+@include respond-to($b-vp) {
+
+
+}
+
+@include respond-to($c-vp) {
+
+
+
+}
+
+@include respond-to($d-vp) {
+
+%gradient-2 {
+	// background-color: rgba-value($black-2,0);
+	@include filter-gradient($black-2, $black-2, horizontal);
+	@include background-image(linear-gradient(to right, rgba-value($black-2,0) 0%, rgba-value($black-2,0.1) 25%, rgba-value($black-2,0.5) 35%, rgba-value($black-2,1) 51%, rgba-value($black-2,1) 100%));
+}
+
+
+}
+
+@include respond-to($e-vp) {
+
+
+
+}
+
+@include respond-to($f-vp) {
+
+
+}
+
+
+
+
+
+// @include respond-to-max($f-vp) {
+
+// }
+
+// @include respond-to-max($e-vp) {
+
+// }
+
+// @include respond-to-max($d-vp) {
+
+// }
+
+// @include respond-to-max($c-vp) {
+
+// }
+
+// @include respond-to-max($b-vp) {
+
+// }
+
+// @include respond-to-max($a-vp) {
+
+// }
+
+
+
+
+
+
+
+
+
+

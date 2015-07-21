@@ -1,0 +1,366 @@
+// ------------------------------------------------------------
+// Mixins
+// ------------------------------------------------------------
+
+
+// -------------------------------------------------------
+// List styles
+// -------------------------------------------------------
+
+// Mixins for list style types
+@mixin unordered {
+	 list-style-position: outside; 
+	 list-style-type: disc;
+}
+
+@mixin unordered-inside {
+	 list-style-position: inside; 
+	 list-style-type: disc;
+}
+
+@mixin ordered {
+	list-style-position: outside; 
+	list-style-type: decimal;
+}
+
+@mixin ordered-inside {
+	list-style-position: inside; 
+	list-style-type: decimal;
+}
+
+@mixin nobullet {
+	list-style-type: none;
+}
+
+
+
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+// -------------------------------------------------------
+// Transitions
+// -------------------------------------------------------
+$_prop:all !default;
+$_duration:0.4s !default;
+$_timing: ease !default;
+$_delay:0s !default;
+$_multiprops: false !default;
+
+@mixin _transition($prop: $_prop, $duration: $_duration, $timing: $_timing, $delay: $_delay, $multiprops: $_multiprops) {
+
+
+// TODO: TRANSITION MIXIN FOR MULTIPLE VALUES
+
+		@if $multiprops == true {
+
+			$max: length($prop);
+			$transitions: ;
+			
+			@for $i from 1 through $max {
+				$transitions: #{$transitions + nth($prop, $i) nth($duration, $i) nth($timing, $i) nth($delay, $i) };
+				@if $i < $max {
+					$transitions: #{$transitions + ", "};
+				}
+			}
+			@include transition($transitions);
+			$multiprops: false;
+			
+		}
+		@else {
+
+
+			@include transition($prop $duration $timing $delay);
+		}
+
+}
+
+
+
+
+// -------------------------------------------------------
+// Hacks
+// -------------------------------------------------------
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+// Find out more here: https://github.com/IanLunn/Hover/wiki/Hacks-Explained
+
+@mixin hardwareAccel() {
+	// Improve performance on mobile/tablet devices
+	@include prefixed(transform, translateZ(0));
+}
+
+@mixin improveAntiAlias() {
+	// Improve aliasing on mobile/tablet devices
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin fontSmooth() {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin forceBlockLevel() {
+	// Transforms need to be block-level to work
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@mixin hacks() {
+	// @include forceBlockLevel();
+	// @include hardwareAccel();
+	@include improveAntiAlias();
+	@include fontSmooth();
+}
+
+
+
+// -------------------------------------------------------
+// Vertical Scrolling
+// -------------------------------------------------------
+@mixin horizontal-scrolling($child-element, $width: 45%, $min-width: 0) {
+	display: block;
+	overflow-x: scroll;
+	white-space: nowrap;
+	overflow-y: hidden;
+	> #{$child-element} {
+		white-space: normal;
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+		width: $width;
+		min-width: $min-width;
+	}
+}
+
+
+
+
+
+
+// -------------------------------------------------------
+// Animations
+// -------------------------------------------------------
+@mixin animation($animate...) {
+		$max: length($animate);
+		$animations: '';
+
+		@for $i from 1 through $max {
+				$animations: #{$animations + nth($animate, $i)};
+
+				@if $i < $max {
+						$animations: #{$animations + ", "};
+				}
+		}
+		-webkit-animation: $animations;
+		-moz-animation:    $animations;
+		-o-animation:      $animations;
+		animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+		@-webkit-keyframes #{$animationName} {
+				@content;
+		}
+		@-moz-keyframes #{$animationName} {
+				@content;
+		}
+		@-o-keyframes #{$animationName} {
+				@content;
+		}
+		@keyframes #{$animationName} {
+				@content;
+		}
+}
+
+
+
+// -------------------------------------------------------
+// Retina Background images /***retina.js***/
+// -------------------------------------------------------
+
+@mixin at2x($path, $ext: "jpg", $w: auto, $h: auto) {
+	$at1x_path: "#{$path}.#{$ext}";
+	$at2x_path: "#{$path}@2x.#{$ext}";
+
+	background-image: url("#{$at1x_path}");
+
+	@media all and (-webkit-min-device-pixel-ratio : 1.5),
+				 all and (-o-min-device-pixel-ratio: 3/2),
+				 all and (min--moz-device-pixel-ratio: 1.5),
+				 all and (min-device-pixel-ratio: 1.5) {
+					 background-image: url("#{$at2x_path}");
+					 background-size: $w $h;
+	}
+}
+
+// -------------------------------------------------------
+// Font face
+// -------------------------------------------------------
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style : normal, $font-stretch : normal) {
+	@font-face {
+	font-family: '#{$font-family}';
+	src: url(('#{$font-filename}.eot'));
+	src: url(('#{$font-filename}.eot?#iefix')) format('embedded-opentype'),
+			url(('#{$font-filename}.woff')) format('woff'),
+			url(('#{$font-filename}.ttf')) format('truetype'),
+			url(('#{$font-filename}.svg##{$font-family}')) format('svg');
+	font-weight: $font-weight;
+	font-style: $font-style;
+	}
+}
+
+
+
+// -------------------------------------------------------
+// Background Color/Gradient Overlay
+// -------------------------------------------------------
+@mixin background-overlay($content: "", $opacity: 1, $gradient-overlay: true) {
+		position: relative;
+		&:before {
+			content: $content;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			opacity: $opacity;
+			// background: $background; //We will use compass's inbuilt gradient mixin to generate prefixed gradients
+			@if $gradient-overlay == true {
+				@content;
+			}
+			@else {  }
+		}
+}
+
+// -------------------------------------------------------
+// Font Weight Mixin based on typography
+// -------------------------------------------------------
+@mixin font-line-height($font: inherit, $line-height: false) {
+	font-family: $font;
+	@if ($line-height == false) {  }
+	@else { line-height: $line-height*1%; }
+	
+}
+
+
+
+// -------------------------------------------------------
+// Link hover styles
+// -------------------------------------------------------
+
+@mixin link-active-styles {
+	&:hover, &:focus, &:active {
+		@content; 
+	}
+}
+	
+	
+// -------------------------------------------------------
+// Align things vertically (http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/)
+// -------------------------------------------------------
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+// -------------------------------------------------------
+// Media queries
+// -------------------------------------------------------
+
+
+// Reference widths from settings file
+@mixin respond-to($media-min, $IE9: false) {
+		@if $IE9 == true {
+				.lt-ie9 & {
+						@content;
+				}
+				@media screen and (min-width: $media-min)  {
+						@content;
+				}
+		}
+		@else {
+				@media screen and (min-width: $media-min) {
+						@content;
+				}
+		}
+}
+
+@mixin respond-to-max($media-max, $IE9: true) {
+		@if $IE9 == true {
+				.lt-ie9 & {
+						@content;
+				}
+				@media screen and (max-width: $media-max - 1px)  {
+						@content;
+				}
+		}
+		@else {
+				@media screen and (max-width: $media-max - 1px) {
+						@content;
+				}
+		}
+}
+
+
+@mixin respond-to-min-max($media-min, $media-max, $IE9: true) {
+		@if $IE9 == true {
+				.lt-ie9 & {
+						@content;
+				}
+				@media screen and (min-width: $media-min) and (max-width: $media-max)  {
+						@content;
+				}
+		}
+		@else {
+				 @media screen and (min-width: $media-min) and (max-width: $media-max) {
+						@content;
+				}
+		}
+}
+
+
+// -------------------------------------------------------
+// Retina images
+// -------------------------------------------------------
+
+// Usage: Send path, image name, and width and height. 
+// Name retina images [name]2x.
+
+@mixin image-2x($image, $width, $height) {
+	@media (min--moz-device-pixel-ratio: 1.3),
+				 (-o-min-device-pixel-ratio: 2.6/2),
+				 (-webkit-min-device-pixel-ratio: 1.3),
+				 (min-device-pixel-ratio: 1.3),
+				 (min-resolution: 1.3dppx) {
+		/* on retina, use image that's scaled by 2 */
+		background-image: url($image);
+		background-size: $width $height;
+	}
+}
+
+// -------------------------------------------------------
+// HEX to RGB
+// -------------------------------------------------------
+
+// http://codepen.io/sturobson/pen/hdKyv
+@mixin rgba($color, $value) {
+	background-color: $color;
+	background-color: rgba($color, $value);
+}
