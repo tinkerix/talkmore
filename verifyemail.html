@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CellYogi Email Verification</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="library/js/jquery-2.1.4.min.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function() {
+			var verified = false;
+			var incomingUrl = window.location.href;
+			tokens = incomingUrl.split('?');
+			if (tokens.length != 2) {
+				$("body").text("CellYogi Email Verification Failed! Invalid Url Supplied");
+				return;
+			}
+			params = tokens[1].split('&');
+			if (params.length != 2) {
+				$("body").text("CellYogi Email Verification Failed! Invalid Url Supplied");
+				return;
+			}
+			var emailstr = decodeURIComponent(params[0].substring(6));
+			var key = decodeURIComponent(params[1].substring(16));
+			
+			$.post("http://yogiapi.talkmoreapp.com/v1/user/verifyEmail", {email: emailstr, verificationkey: key}, function(result, status) {
+			// $.post("http://localhost:8080/v1/user/verifyEmail", {email: emailstr, verificationkey: key}, function(result, status) {
+					// alert("Result: " + result + "\nStatus: " + status);
+					$("body").text("CellYogi Email Verification Successful!");
+				}).fail(function() {
+					$("body").text("CellYogi Email Verification Failed!");
+				});
+			
+
+        });
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>
