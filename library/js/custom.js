@@ -907,6 +907,8 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		break;
 		case '#activate': $('#ui-feature-3').fadeIn();
 		break;
+        case '#manage': $('#ui-feature-4').fadeIn();
+        break;
 	}
 });
 
