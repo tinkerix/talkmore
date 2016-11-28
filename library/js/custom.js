@@ -113,20 +113,34 @@ function init() {
             (body.offsetHeight <= windowHeight || 
              html.offsetHeight <= windowHeight)) {
  
+        $.getDocHeight = function(){
+        return Math.max(
+            $(document).height(),
+            $(window).height(),
+            /* For opera: */
+            document.documentElement.clientHeight
+            );
+        };
         var fullPageElem = document.createElement('div');
         fullPageElem.style.cssText = 'position:absolute; z-index:-10000; ' +
                                      'top:0; left:0; right:0; height:' + 
-                                      root.scrollHeight + 'px';
+                                      $.getDocHeight() + 'px';
+        fullPageElem.className = "fullPageElem";
         document.body.appendChild(fullPageElem);
         
         // DOM changed (throttled) to fix height
         var pendingRefresh;
+        $(window).resize(function(){
+                console.log('resize done');
+                fullPageElem.style.height = '0';
+                fullPageElem.style.height = $.getDocHeight()+ 'px';
+        });
         var refresh = function () {
             if (pendingRefresh) return; // could also be: clearTimeout(pendingRefresh);
             pendingRefresh = setTimeout(function () {
                 if (isExcluded) return; // could be running after cleanup
                 fullPageElem.style.height = '0';
-                fullPageElem.style.height = root.scrollHeight + 'px';
+                fullPageElem.style.height = $.getDocHeight() + 'px';
                 pendingRefresh = null;
             }, 500); // act rarely to stay fast
         };
@@ -901,13 +915,13 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 	console.log($(this).attr('href'))
 	$('.ui-feature').fadeOut();
 	switch( $(this).attr('href') ) {
-		case '#analyze': $('#ui-feature-1').fadeIn();
+		case '#usage': $('#ui-feature-1').fadeIn();
 		break;
-		case '#assess': $('#ui-feature-2').fadeIn();
+		case '#recommendation': $('#ui-feature-2').fadeIn();
 		break;
-		case '#activate': $('#ui-feature-3').fadeIn();
+		case '#manage': $('#ui-feature-3').fadeIn();
 		break;
-        case '#manage': $('#ui-feature-4').fadeIn();
+        case '#bill': $('#ui-feature-4').fadeIn();
         break;
 	}
 });
@@ -1203,7 +1217,6 @@ $('.si--input-form').each(function(){
 		return onSubmit(input_field);
 	})
 })
-
 
 
 

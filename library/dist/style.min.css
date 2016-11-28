@@ -2526,14 +2526,11 @@ html.touch:not(.mousePresent) .appscreens-frame {
         min-width: 150px
     }
 }
-.testimonial--col {
-    margin-bottom: 8rem
-}
 .testimonial--inner {
     text-align: center
 }
 .testimonee {
-    margin: 30px auto 0
+    margin: 10px auto 0
 }
 .team--col,
 .team-title {
@@ -2543,23 +2540,13 @@ html.touch:not(.mousePresent) .appscreens-frame {
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    background-image: url(./../../images/testimonees.png);
-    background-repeat: no-repeat;
-    background-size: 96px;
-    margin-right: 15px
 }
-.testimonial--col:nth-child(1) .testimonee__image {
-    background-position: 0 top
-}
-.testimonial--col:nth-child(2) .testimonee__image {
-    background-position: -32px top
-}
-.testimonial--col:nth-child(3) .testimonee__image {
-    background-position: -64px top
+.testimonial-text{
+    color: #fff
 }
 .testimonee__name {
     text-transform: uppercase;
-    color: #444
+    color: #fff
 }
 .team {
     clear: left
@@ -2567,18 +2554,6 @@ html.touch:not(.mousePresent) .appscreens-frame {
 .member__image {
     width: 70px;
     height: 70px;
-    background-image: url(./../../images/team.png);
-    background-repeat: no-repeat;
-    background-size: 210px
-}
-.team--col:nth-child(1) .member__image {
-    background-position: 0 top
-}
-.team--col:nth-child(2) .member__image {
-    background-position: -70px top
-}
-.team--col:nth-child(3) .member__image {
-    background-position: -140px top
 }
 ._container-appscreens {
     position: absolute;
@@ -2751,6 +2726,34 @@ html.touch:not(.mousePresent) .appscreens-frame.scrollDown {
     -o-transform: translateX(-400%) translateZ(0);
     transform: translateX(-400%) translateZ(0)
 }
+.ui-slider .ui-slide:nth-child(6) {
+    -webkit-transform: translate(450%, -50%) translateZ(0);
+    -moz-transform: translate(450%, -50%) translateZ(0);
+    -ms-transform: translate(450%, -50%) translateZ(0);
+    -o-transform: translate(450%, -50%) translateZ(0);
+    transform: translate(450%, -50%) translateZ(0)
+}
+.ui-slider.slide-6 {
+    -webkit-transform: translateX(-500%) translateZ(0);
+    -moz-transform: translateX(-500%) translateZ(0);
+    -ms-transform: translateX(-500%) translateZ(0);
+    -o-transform: translateX(-500%) translateZ(0);
+    transform: translateX(-500%) translateZ(0)
+}
+.ui-slider .ui-slide:nth-child(7) {
+    -webkit-transform: translate(550%, -50%) translateZ(0);
+    -moz-transform: translate(550%, -50%) translateZ(0);
+    -ms-transform: translate(550%, -50%) translateZ(0);
+    -o-transform: translate(550%, -50%) translateZ(0);
+    transform: translate(550%, -50%) translateZ(0)
+}
+.ui-slider.slide-7 {
+    -webkit-transform: translateX(-600%) translateZ(0);
+    -moz-transform: translateX(-600%) translateZ(0);
+    -ms-transform: translateX(-600%) translateZ(0);
+    -o-transform: translateX(-600%) translateZ(0);
+    transform: translateX(-600%) translateZ(0)
+}
 .appscreens--phoneFrame__wrapper {
     position: absolute;
     height: 100%;
@@ -2809,4 +2812,6 @@ body.touched .cta--text {
         height: 100%;
         width: 100%
 }
-
+.fullPageElem{
+    height: 100%;
+}
