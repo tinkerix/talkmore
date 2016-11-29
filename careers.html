@@ -1,246 +1,108 @@
-<html><head><title>TalkMore Privacy Policy</title><meta charset="UTF-8"><link href="http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic|Roboto:400,700,700italic,400italic" type="text/css" rel="stylesheet"><style>
+<html><head><title>TalkMore Privacy Policy</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style type="text/css">
+    .panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
 
-body {
-    font-size: 15px;
-    color: #333;
-    background-image: url(images/career.jpg);
-    background-size: cover;
-    padding: 60px 95px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-rendering: optimizeLegibility;
-    font-feature-settings: "kern";
-    font-kerning: normal;
-    -moz-font-feature-settings: "kern";
-    -webkit-font-feature-settings: "kern";
-}
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
 
-/* Headings */
-h1, h2, h3, th {
-    font-family: Roboto, sans-serif;
-    font-weight: 700;
-    margin: 0;
-    margin-top: 1.25em;
-    margin-bottom: 0.75em;
-}
+    .panel-title {
+        font-size: 14px;
+    }
 
-h1 {
-    font-size: 50px;
-    line-height: 42px;
-}
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
 
-h1:first-child {
-    margin-top: 0;
-}
+    .more-less {
+        float: right;
+        color: #212121;
+    }
 
-h2 {
-    font-size: 18px;
-    line-height: 22px;
-}
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #EEEEEE;
+    }
 
-h3 {
-    text-transform: uppercase;
-    font-size: 13px;
-    line-height: 16px;
-}
+    /* ----- v CAN BE DELETED v ----- */
+    @media only screen and (min-width: 895px) {
 
-/* Body text */
-body, p, ul, ol, td {
-    font-family: 'Crimson Text', serif;
-    font-size: 16px;
-    line-height: 20px;
-}
+        body {
+            color: #333;
+            background-image: url(images/career.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+        }
+    }
 
-code, pre {
-    font-family: Consolas, "Liberation Mono", Menlo, "Courier Prime Web", Courier, monospace;
-    background: #f3f3f3;
-}
-
-code {
-    padding: 1px;
-    margin: 0 -1px;
-    border-radius: 3px;
-}
-
-pre {
-    display: block;
-    line-height: 20px;
-    text-shadow: 0 1px white;
-    padding: 5px 5px 5px 30px;
-    white-space: nowrap;
-    position: relative;
-    margin: 1em 0;
-}
-
-pre:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 15px;
-    border-left: solid 1px #dadada;
-}
-
-/* Lists */
-div[data-section-style="5"],
-div[data-section-style="6"],
-div[data-section-style="7"] {
-    margin: 12px 0;
-}
-
-ul {
-    padding: 0 0 0 40px;
-}
-
-ul li {
-    margin-bottom: 0.4em;
-}
-
-/* Bulleted list */
-div[data-section-style="5"] ul {
-    list-style-type: disc;
-}
-div[data-section-style="5"] ul ul {
-    list-style-type: circle;
-}
-div[data-section-style="5"] ul ul ul {
-    list-style-type: square;
-}
-div[data-section-style="5"] ul ul ul ul {
-    list-style-type: disc;
-}
-div[data-section-style="5"] ul ul ul ul ul {
-    list-style-type: circle;
-}
-div[data-section-style="5"] ul ul ul ul ul ul {
-    list-style-type: square;
-}
-
-/* Numbered list */
-div[data-section-style="6"] ul {
-    list-style-type: decimal;
-}
-div[data-section-style="6"] ul ul {
-    list-style-type: lower-alpha;
-}
-div[data-section-style="6"] ul ul ul {
-    list-style-type: lower-roman;
-}
-div[data-section-style="6"] ul ul ul ul {
-    list-style-type: decimal;
-}
-div[data-section-style="6"] ul ul ul ul ul {
-    list-style-type: lower-alpha;
-}
-div[data-section-style="6"] ul ul ul ul ul ul {
-    list-style-type: lower-roman;
-}
-
-/* Checklist */
-div[data-section-style="7"] ul {
-    list-style-type: none;
-}
-
-div[data-section-style="7"] ul li:before {
-    content: "\2610";
-    position: absolute;
-    display: inline;
-    margin-right: 1.2em;
-    margin-left: -1.2em;
-}
-
-div[data-section-style="7"] ul li.parent:before {
-    content: "";
-}
-
-div[data-section-style="7"] ul li.parent {
-    font-weight: bold;
-}
-
-div[data-section-style="7"] ul li.checked {
-    text-decoration: line-through;
-}
-
-div[data-section-style="7"] ul li.checked:before {
-    content: "\2611";
-    text-decoration: none;
-}
-
-/* Tables */
-div[data-section-style="8"] {
-    margin: 12px 0;
-}
-
-table {
-    border-spacing: 0;
-    border-collapse: separate;
-    border: solid 1px #7c7c7c;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
-    table-layout: fixed;
-    position: relative;
-}
-
-table th, table td {
-    padding: 2px 2px 0;
-    min-width: 1.5em;
-    word-wrap: break-word;
-}
-
-table th {
-    border-bottom: 1px solid #ccc;
-    background: #f0f0f0;
-    font-weight: bold;
-    vertical-align: bottom;
-    color: #3a4449;
-    text-align: center;
-}
-
-table td {
-    padding-top: 0;
-    border-left: 1px solid #e1e1e1;
-    border-top: 1px solid #e1e1e1;
-    vertical-align: top;
-}
-
-table td:first-child {
-    border-left: hidden;
-}
-
-table tr:first-child td {
-    border-top: hidden;
-}
-
-/* Images */
-div[data-section-style="11"] {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div[data-section-style="11"][data-section-float="0"] {
-    clear: both;
-    text-align: center;
-}
-
-div[data-section-style="11"][data-section-float="1"] {
-    float: left;
-    clear: left;
-    margin-right: 20px;
-}
-
-div[data-section-style="11"][data-section-float="2"] {
-    float: right;
-    clear: right;
-    margin-left: 20px;
-}
-
-div[data-section-style="11"] img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: auto;
-}
+    .demo {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 </style>
-<h1 id='ECaACAuEDJc' style="text-align:center">CAREERS</h1>
+</head>
+<body>
+    <div class="container demo">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <h1 align="center">Current Oppenings</h1>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            1. Digital Media marketing interns
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+              </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="more-less glyphicon glyphicon-plus"></i>
+                        2. Web Designing interns
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div><!-- panel-group -->
+    
+    
+</div><!-- container -->
+<script type="text/javascript">function toggleIcon(e) {
+    $(e.target)
+    .prev('.panel-heading')
+    .find(".more-less")
+    .toggleClass('glyphicon-plus glyphicon-minus');
+}
+$('.panel-group').on('hidden.bs.collapse', toggleIcon);
+$('.panel-group').on('shown.bs.collapse', toggleIcon);</script>
+</body>
 </html>
