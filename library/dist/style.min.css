@@ -2075,7 +2075,7 @@ input[type=submit] {
     padding: 15px 0
 }
 .footer-phone {
-    margin-top: -75px
+    margin-top: -56px
 }
 .footer-phone img {
     width: 100%
@@ -2160,6 +2160,9 @@ input[type=submit] {
     transform: scale(.5)
 }
 @media screen and (min-width: 992px) {
+    #email,#number{
+        margin-top:8px;
+    }
     .footer__social p {
         margin-top: 10px
     }
@@ -2812,6 +2815,10 @@ body.touched .cta--text {
         height: 100%;
         width: 100%
 }
-.fullPageElem{
-    height: 100%;
+.middlepart{
+    position: relative
+}
+.gobottom{
+    position: absolute;
+    bottom: 0
 }

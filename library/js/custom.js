@@ -112,14 +112,15 @@ function init() {
     else if (scrollHeight > windowHeight &&
             (body.offsetHeight <= windowHeight || 
              html.offsetHeight <= windowHeight)) {
- 
+
         $.getDocHeight = function(){
-        return Math.max(
-            $(document).height(),
-            $(window).height(),
-            /* For opera: */
-            document.documentElement.clientHeight
-            );
+            var body = document.body,
+            html = document.documentElement;
+            var scrollHeight = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+            var bottomBar = $('.withlovebd');
+            var heightByFooterPosition = bottomBar.position().top + bottomBar.height() + 14;
+            return Math.min(scrollHeight,heightByFooterPosition);
         };
         var fullPageElem = document.createElement('div');
         fullPageElem.style.cssText = 'position:absolute; z-index:-10000; ' +
@@ -130,11 +131,6 @@ function init() {
         
         // DOM changed (throttled) to fix height
         var pendingRefresh;
-        $(window).resize(function(){
-                console.log('resize done');
-                fullPageElem.style.height = '0';
-                fullPageElem.style.height = $.getDocHeight()+ 'px';
-        });
         var refresh = function () {
             if (pendingRefresh) return; // could also be: clearTimeout(pendingRefresh);
             pendingRefresh = setTimeout(function () {
@@ -144,7 +140,7 @@ function init() {
                 pendingRefresh = null;
             }, 500); // act rarely to stay fast
         };
-  
+        $(window).resize(function(){refresh();});
         setTimeout(refresh, 10);
  
         // TODO: attributeFilter?
@@ -912,7 +908,6 @@ function sceneProgress(event) {
 
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-	console.log($(this).attr('href'))
 	$('.ui-feature').fadeOut();
 	switch( $(this).attr('href') ) {
 		case '#usage': $('#ui-feature-1').fadeIn();
