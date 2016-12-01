@@ -2830,4 +2830,5 @@ h2.feature_points{
 }
 #points{
     list-style-type: disc;
+    color: white;
 }
