@@ -75,7 +75,6 @@ figure,
 footer,
 form,
 h1,
-h2,
 h3,
 h4,
 h5,
@@ -982,11 +981,9 @@ input::-moz-focus-inner {
     border: 0
 }
 .h1,
-.h2,
 .h3,
 .h4,
 h1,
-h2,
 h3,
 h4,
 p {
@@ -1199,11 +1196,10 @@ textarea,
 ul {
     font-family: Roboto;
     font-size: 1.8rem;
-    line-height: 135%;
+    line-height: 150%;
     margin: 10px 0;
     font-style: inherit
 }
-ol,
 ul {
     list-style-type: none
 }
@@ -2320,7 +2316,8 @@ textarea {
     padding: 100px 0 50px
 }
 .mobile-1--content {
-    position: relative
+    position: relative;
+    padding-top: 50px;
 }
 .mobile-1--content ._comp--title-copy {
     margin-bottom: 3rem
@@ -2821,4 +2818,16 @@ body.touched .cta--text {
 .gobottom{
     position: absolute;
     bottom: 0
+}
+h2.feature_points{
+    line-height: 20px;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding-bottom:20px;
+    font-family: Roboto Condensed;
+    font-style: inherit;
+
+}
+#points{
+    list-style-type: disc;
 }
