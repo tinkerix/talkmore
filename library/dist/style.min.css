@@ -1246,7 +1246,7 @@ h4 {
 .h4-varient-2,
 a {
     font-family: Roboto Condensed;
-    margin: 10px 0;
+    margin: 30px 0;
     font-style: inherit
 }
 a {
@@ -2831,4 +2831,9 @@ h2.feature_points{
 #points{
     list-style-type: disc;
     color: white;
+
+
+
+
+    
 }
