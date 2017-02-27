@@ -22,7 +22,7 @@
 			var emailstr = decodeURIComponent(params[0].substring(6));
 			var key = decodeURIComponent(params[1].substring(16));
 			
-			$.post("http://yogiapi.talkmoreapp.com/v1/user/verifyEmail", {email: emailstr, verificationkey: key}, function(result, status) {
+			$.post("https://yogiapi.talkmoreapp.com/v1/user/verifyEmail", {email: emailstr, verificationkey: key}, function(result, status) {
 			// $.post("http://localhost:8080/v1/user/verifyEmail", {email: emailstr, verificationkey: key}, function(result, status) {
 					// alert("Result: " + result + "\nStatus: " + status);
 					$("body").text("CellYogi Email Verification Successful!");
