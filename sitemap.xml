@@ -9,32 +9,12 @@
   <priority>1.0</priority>
 </url>
 <url>
-  <loc>http://tinkerix.com/howitworks-usage</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://tinkerix.com/howitworks-recommendation</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://tinkerix.com/howitworks-manage</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://tinkerix.com/howitworks-bill</loc>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>http://tinkerix.com/careers.html</loc>              <priority>0.80</priority>
 </url>
  <url>
   <loc>http://tinkerix.com/blog</loc>
   <priority>0.80</priority>
 </url>
-<url>
-  <loc>http://tinkerix.com/customercare</loc>
-  <priority>0.80</priority>
-</url>  
 <url>
   <loc>http://tinkerix.com/refund.html</loc>
   <priority>0.80</priority>
