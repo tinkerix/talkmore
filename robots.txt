@@ -1,0 +1,5 @@
+# robots.txt for https://tinkerix.com/
+
+User-agent: *
+
+Sitemap: https://tinkerix.com/sitemap.xml
